@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+    demo:
+        container_name: demo_php
+        image: demo_symfony
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/var/www/demo:cached
+        ports:
+            - 8080:8080
+        command: php -S 0.0.0.0:8080 -t public
+
+    # Postgres
+    postgres:
+        image: postgres:14.2-bullseye
+        restart: always
+        env_file:
+            - docker-postgres.env
+        ports:
+            - 5432:5432
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+
+    # Adminer
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 38080:8080
+
+# Volumes
+volumes:
+    pgdata:
+        driver: local

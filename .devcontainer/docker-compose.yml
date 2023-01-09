@@ -1,0 +1,19 @@
+version: "3.9"  
+
+# Services
+services:
+
+    #  Demo Service
+    demo:
+        container_name: demo_php_vscode
+        image: folder-manage-vscode
+        build:
+            context: .devcontainer
+            dockerfile: Dockerfile
+            args:
+                VERSION: 8.1-apache-bullseye
+        command: sleep infinity
+        ports:
+            - 8080:8080
+        environment:
+            - PHP_ENV=dev

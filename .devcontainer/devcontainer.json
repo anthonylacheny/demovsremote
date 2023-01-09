@@ -1,0 +1,31 @@
+{
+    "name": "Demo Symfony",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "docker-compose.yml"
+    ],
+    "service": "demo",
+    "workspaceFolder": "/var/www/demo",
+    "shutdownAction": "stopCompose",
+    "postCreateCommand": "php -v && composer install",
+    "remoteUser": "vscode",
+    "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "yaml.customTags": [ "!tagged_iterator", "!tagged"]
+    },
+    "extensions": [
+        "xdebug.php-pack",
+        "redhat.vscode-yaml",
+        "bmewburn.vscode-intelephense-client",
+        "dotjoshjohnson.xml",
+        "mrmlnc.vscode-apache",
+        "eamodio.gitlens",
+        "donjayamanne.githistory"
+    ],
+    "portsAttributes": {
+		"8080": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	}
+}
