@@ -11,7 +11,7 @@ services:
             - .:/var/www/demo:cached
         ports:
             - 8080:8080
-        command: php -S 0.0.0.0:8080 -t public
+            - 8081:80
 
     # Postgres
     postgres:
