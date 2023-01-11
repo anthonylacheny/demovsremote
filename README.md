@@ -20,7 +20,7 @@ For more details you can take a look on the **docker-compose.yml** file, **.devc
 
 ## Start server
 
-- Execute "launch" from VS Code (you can execure the debugger too)
+- Execute "launch" from VS Code (you can execute the debugger too)
 
 ## Test
 
