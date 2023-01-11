@@ -1,8 +1,8 @@
 FROM php:8.1-apache-bullseye
 
-WORKDIR /var/www/manage
+WORKDIR /var/www/demo
 
-ENV PHP_ENV=production
+ENV PHP_ENV=dev
 
 # Configure apt and install packages
 RUN apt-get update && apt-get -y install curl zip unzip
